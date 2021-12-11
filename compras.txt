@@ -1,2 +1,3 @@
-psicologa 1400
-memoria 2100
+Verdura
+Fruta
+Pan
