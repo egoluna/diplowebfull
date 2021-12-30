@@ -1,0 +1,32 @@
+/* etiquetas */
+body{ font-family: 'Candara','verdana', 'Arial Narrow', Arial, sans-serif;
+    background-color: whitesmoke;
+    padding: 0px 10px;
+    border: double orange;
+    }
+h1{font-family: 'Hobo std','Brush Script Std'; color:orangered;text-align: center;
+    border-style:none none double double;
+}
+h2{color:orange;}
+h3{text-decoration: underline;}
+p{text-align: justify;}
+img{width: 10%;}
+
+/* eventos */
+li:hover{font-size: 1.1em; color: #ff5500; font-style: italic;}
+h1:hover{text-transform: uppercase; text-shadow: 2px 2px 2px gray;letter-spacing: 2px;}
+p:hover{background-color: rgb(233, 233, 233); }
+img:hover{width: 20%; border-color: lightsalmon;}
+
+/* clases */
+.consulta{ background-color: wheat; 
+    text-align:center; 
+    width: 50%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius:10px ;}
+.flotarderecha{float: right;}
+.limpiar{clear: both;}
+.derecha{text-align: right;}
+
+
