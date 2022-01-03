@@ -1,0 +1,80 @@
+/* etiquetas */
+
+body{ font-family: 'Bubbler One', sans-serif;
+    background-color: whitesmoke;
+    padding: 0px 10px;
+    border: double orange;
+    border-radius: 0 20px;
+    
+    }
+h1{font-family: 'Original Surfer', cursive; color:orangered;text-align: center;
+    border-style:none none double double;
+    /*background: linear-gradient(to left, whitesmoke,#dddddd ,lightgray ,gray);*/
+    background: radial-gradient(circle at center, whitesmoke ,#dddddd,lightgray ,gray);
+}
+
+h2{color:orange; 
+   
+}
+h3{text-decoration: underline;}
+p{text-align: justify;}
+img{width: 10%; padding: 10px;
+    filter: sepia(69%);
+-webkit-filter: sepia(69%);
+-moz-filter: sepia(69%);
+   }
+
+/* eventos */
+li:hover{font-size: 1.1em; color: #ff5500; font-style: italic;}
+h1:hover{text-transform: uppercase; text-shadow: 2px 2px 2px gray;letter-spacing: 2px;}
+p:hover{background-color: rgb(233, 233, 233); }
+img:hover{width: 20%; border-color: lightsalmon;
+    filter: sepia(0%);
+    -webkit-filter: sepia(0%);
+    -moz-filter: sepia(0%);
+}
+
+/* clases */
+.consulta{ 
+    background: #f0d162;
+background: linear-gradient(78deg,#f0d162 0%, rgba(227,224,213,0.79) 20%);
+background: -webkit-linear-gradient(78deg,#f0d162 0%, rgba(227,224,213,0.79) 20%);
+background: -moz-linear-gradient(78deg,#f0d162 0%, rgba(227,224,213,0.79) 20%); 
+    text-align:center; 
+    width: 50%;
+    padding: 10px;
+    margin-left: 25%;
+    border-radius:10px ;}
+.flotarderecha{float: right;}
+.limpiar{clear: both;}
+.derecha{text-align: right;}
+.columnas{ column-count:3; 
+        column-gap: 20px;
+        column-rule: 1px solid gray;
+        vertical-align: top;}
+.icono{
+    color:orange;
+}
+.preferencias
+{ width: 300px;
+    padding: 5px 0 0 10px ;
+    border-radius: 0 50px 50px 50px ;
+    box-sizing: border-box;
+    margin: 30px;
+    
+    }
+.series
+{
+    box-shadow: 15px 33px 7px -4px rgba(133,232,203,0.9);
+-webkit-box-shadow: 15px 33px 7px -4px rgba(133,232,203,0.9);
+-moz-box-shadow: 15px 33px 7px -4px rgba(133,232,203,0.9);
+border:1px solid rgba(133,232,203,0.9);
+}
+.peliculas
+{ /*  background-color: gainsboro;*/
+    box-shadow: 22px 27px 40px -8px rgba(132,210,222,0.75) inset;
+    -webkit-box-shadow: 22px 27px 40px -8px rgba(132,210,222,0.75) inset;
+    -moz-box-shadow: 22px 27px 40px -8px rgba(132,210,222,0.75) inset;
+    }
+
+
