@@ -1,0 +1,36 @@
+body{ font-family: Verdana, sans-serif;
+	}
+.ppal{
+	display: flex;
+	justify-content: center; }
+.contenedor{
+	border: 1px solid black;
+	color:white;	
+	height: 300px;
+	/*nuevas propiedades*/
+	/*position:relative;
+	left:15%;*/
+	display: inline-flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	
+}
+.item{
+	width: 100px;
+	height: 100px;
+	font-size: 50px;
+	/*nuevas propiedades*/
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+
+.color1{
+	background-color: red;
+}
+.color2{
+	background-color: blue;
+}
+.color3{
+	background-color: green;
+}

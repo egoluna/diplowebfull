@@ -1,0 +1,30 @@
+body{ font-family: Verdana, sans-serif;}
+
+.contenedor{
+	border: 1px solid black;
+	color:white;	
+	margin:0 auto;		
+	/*nuevas propiedades*/
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+}
+.item{
+	width: 100px;
+	height: 100px;
+	font-size: 50px;
+	/*nuevas propiedades*/
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+
+.color1{
+	background-color: red;
+}
+.color2{
+	background-color: blue;
+}
+.color3{
+	background-color: green;
+}
