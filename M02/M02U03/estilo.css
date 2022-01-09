@@ -1,0 +1,447 @@
+/* etiquetas ***************************************************/
+
+body{ font-family: 'Bubbler One', sans-serif;
+    background-color: whitesmoke;
+    padding: 0px 10px;   
+    
+    }
+h1{font-family: 'Original Surfer', cursive; 
+    color:#fff;
+    text-align: center;
+    background-color: orangered;    
+}
+h2{color:orange; }
+p{text-align: justify;}
+section {
+	background: #FCFCFC;    
+	float: left;
+   padding: 0 10px;
+	width: 65%;
+   box-sizing: border-box;
+   font-size: large;
+   border-radius: 5px 0 0 5px;
+}
+aside {
+	background: #ffCC00;
+	float: right;
+	width: 35%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: large;
+    color:white;
+    border-radius: 0 5px 5px 0;
+}
+
+
+/****************** clases *****************************************/
+.flotarderecha{float: right;}
+.limpiar{clear: both;}
+.derecha{text-align: right;}
+.columnas{ column-count:2; 
+        column-gap: 20px;
+        column-rule: 1px solid gray;
+        vertical-align: top;}
+
+.fotoego{width: 180px; 
+   filter: sepia(69%);
+   -webkit-filter: sepia(69%);
+   -moz-filter: sepia(69%);
+}
+        
+.contenedor
+{   padding: 5px 0 0 10px ;
+    border-radius: 10px;
+    border: 1px solid black;    
+    box-sizing: border-box;
+	margin:0 auto;
+	color:black;    
+   background-color:gainsboro;
+    /*flex*/
+	display: flex;
+	flex-direction: row;    
+	align-items: top;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+
+/**POSTER*******************************************/
+
+.poster {
+    width: 180px;
+    margin: 10px;
+    border: 1px solid #ff0;
+    overflow: hidden;
+    position: relative;
+    transition: all 3s ease;      
+    box-shadow: 1px 1px 2px #e6e6e6;
+    
+ }
+
+ .poster .mask {
+    width: 180px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+ }
+
+ .poster img{
+     width: 100%;
+     position: relative;
+ }
+
+ .poster h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 10px 0 0 0;
+ }
+ .poster p {
+    position: relative;
+    color: #fff;
+    /*padding: 10px 20px 20px;*/
+    text-align: center;
+ }
+ .poster:hover {
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+ }
+/**SERIE*******************************************/ 
+.serie
+{
+border:1px solid rgba(133,232,203,0.9);
+transition:all 0.3s ease;
+}
+
+.serie img {
+    transition: all 0.2s linear;
+}
+.serie .mask {
+   filter: alpha(opacity=0);
+   opacity: 0;
+   background-color: rgba(153, 103, 37, 0.7);
+   transition: all 0.4s ease-in-out;
+}
+.serie h2 {
+
+   transform: translateY(-100px);
+
+   filter: alpha(opacity=0);
+   opacity: 0;
+ 
+   transition: all 0.2s ease-in-out;
+}
+.serie p {
+   
+   transform: translateY(100px);
+
+   filter: alpha(opacity=0);
+   opacity: 0;
+ 
+   transition: all 0.2s linear;
+}
+.serie:hover img {
+  
+   transform: scale(1.1,1.1);
+}
+.serie:hover .mask {
+  
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+.serie:hover h2,
+.serie:hover p {
+
+   filter: alpha(opacity=100);
+   opacity: 1;
+ 
+   transform: translateY(0px);
+}
+.serie:hover p {
+
+   transition-delay: 0.1s;
+}
+/**PELICULA*******************************************/
+.pelicula img {
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+ }
+ .pelicula .mask {
+    background-color: rgba(231, 231, 219, 0.3);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+ }
+ .pelicula h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin: 0px 20px 0px 20px;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    color: #333;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+ }
+ .pelicula p {
+    color: #333;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+ }
+ .pelicula:hover img {
+    -webkit-transform: scale(10);
+    -moz-transform: scale(10);
+    -o-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+ }
+ .pelicula:hover .mask {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+ }
+ .pelicula:hover h2,.pelicula:hover p {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+ }
+
+ .animacion img {
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+ }
+ .animacion .mask {
+    background-color: rgba(0,0,0,0.8);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transform: scale(0) rotate(-180deg);
+    -moz-transform: scale(0) rotate(-180deg);
+    -o-transform: scale(0) rotate(-180deg);
+    -ms-transform: scale(0) rotate(-180deg);
+    transform: scale(0) rotate(-180deg);
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    -ms-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+ }
+ .animacion h2 {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin: 0px 10px 0px 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+ }
+ .animacion p {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+ } 
+ .animacion:hover .mask {
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+ }
+ .animacion:hover img {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    transition-delay: 0s;
+ }
+ .animacion:hover h2,
+ .animacion:hover p{
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    -o-transition-delay: 0.5s;
+    -ms-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+ }
+
+
+/*key*/
+@keyframes swing
+{
+    15% { transform: rotate(10deg); }
+    
+    30% { transform: rotate(-10deg); }
+    
+    50% { transform: rotate(5deg); }
+    
+    65% { transform: rotate(-5deg); }
+    
+    80% { transform: rotate(2deg); }
+    
+    100% { transform: rotate(0deg); }
+}
+
+
+
+/*Eventos*/
+h1:hover{text-transform: uppercase; 
+        text-shadow: 2px 2px 2px gray;
+        letter-spacing: 2px;}
+
+.fotoego:hover{
+    filter: sepia(0%);
+    -webkit-filter: sepia(0%);
+    -moz-filter: sepia(0%);
+     animation: swing 1s ease;
+    animation-iteration-count: 5;
+}
+.poster:hover{
+    border-radius:5%;
+}
+aside:hover{
+   background-color: chocolate;
+}
+
+
+/*Media quereis*/
+
+@media screen and (min-width: 200px) and (max-width: 800px){
+	body {
+		padding:0;
+		margin:0;
+	}
+   section {
+		width:100%;
+      float:none;
+      padding: 0 5px;
+
+	}
+   aside {
+		float:none;
+		padding: 0.5em;
+		width:100%;
+		margin-left:0;
+      text-align: center;
+   }
+   ul {
+		margin:0;
+      list-style: none;
+ 	}
+	ul li {
+		padding: 0;
+	}
+
+
+   .flotarderecha{float: none;}
+   .columnas{ 
+         column-count:1; 
+         column-gap: 0px;
+         column-rule: 0px;
+   }
+   
+   .fotoego{width: 70%; 
+   }
+         
+   .contenedor
+   {   padding: 0px;
+      border-radius: 5px;
+  }   
+
+  /*key*/
+@keyframes swing
+{
+    15% { transform: translateX(10px); }
+    
+    30% { transform: translateX(-10px); }
+    
+    50% { transform: translateX(5px); }
+    
+    65% { transform: translateX(-5px); }
+    
+    80% { transform: translateX(3px); }
+    
+    100% { transform: translateX(0px); }
+}
+}
+

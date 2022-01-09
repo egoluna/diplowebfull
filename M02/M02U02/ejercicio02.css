@@ -8,12 +8,9 @@ body{ font-family: Verdana, sans-serif;
 	color:white;	
 	height: 300px;
 	/*nuevas propiedades*/
-	/*position:relative;
-	left:15%;*/
 	display: inline-flex;
 	flex-direction: row-reverse;
-	align-items: center;
-	
+	align-items: center;	
 }
 .item{
 	width: 100px;
