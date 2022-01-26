@@ -44,7 +44,7 @@ nav ul li a.activo{
     background-color: #137e91;
 } 
 main{
-    text-align: justify;
+    text-align: justify;    
 }
 footer{
     background-color: #F0f2fb;
@@ -213,6 +213,67 @@ h2{
 .servicio:nth-child(odd) .info{
     float: right;
 }
+/*FIN SERVICIOS ------------------------------------------**/
+/*GALERIA ------------------------------------------**/
+.galeria .foto{
+    float: left;
+    width:  19%; 
+    margin: 1em 0 1em 1%;
+    border: 1px solid black;
+    /* padding: 0.1em; */
+    box-sizing: border-box;         
+}
 
+.galeria .foto img{
+    width: 100%;
+    display:block;         
+}
+.galeria .foto:nth-child(5n+1){
+     margin-left: 0; 
+}
 
-*FIN SERVICIOS ------------------------------------------**
+/*FIN GALERIA ------------------------------------------**/
+/*NOVEDADES ------------------------------------------**/
+
+/*FIN NOVEDADES ------------------------------------------**/
+/*CONTACTO ------------------------------------------**/
+.columna{
+    width:50%;
+    box-sizing: border-box;
+    padding: 0.6em;
+}
+.columna.left{
+    border-right: 1px solid gray;
+}
+.columna.right{
+    font-size: 1.1em;
+}
+.formulario label{
+    vertical-align: top;
+    width: 20%;
+    display: inline-block;
+}
+.formulario input,.formulario textarea{
+    background-color: #eee;
+    border-radius: 5px;
+    border:1px solid #999;
+    padding:0.4em 0.6em;
+    font: size 0.8em;
+    width: 73%;
+}
+.formulario input[type="submit"]{
+    background-color: #59d3bf;
+    box-shadow: 0 0 10px rgba(0 ,0,0, 0.4);
+    color:white;
+    font-size:1em;
+    width: auto;
+    cursor:pointer;    
+}
+.formulario textarea{
+    height: 8em;
+    resize: none;
+}
+.formulario .acciones{
+    text-align: right;
+}
+/*FIN CONTACTO ------------------------------------------**/
