@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M03 U03 E01 Oviedo Luna</title>
+    <script type="text/javascript">
+        let distancia;
+
+        function pedirDistancia(){
+            let rta;
+            let esNro;
+            esNro = false;
+            while (!esNro) {
+                rta = prompt('Ingrese un número que sea la distancia a recorrer en METROS', '10');
+                esNro = !((isNaN(rta)) || (rta == null) || ("" == rta.trim()))
+                //la función Number(rta) no me funcionó porque no puede ingresar el número 0.                
+            }            
+            if (esNro) {
+                distancia = parseInt(rta);
+                document.writeln("Distancia a recorrer:" + distancia + " metros. ");
+            }
+        }
+
+        function calcularTransporte() {
+            if (distancia <= 0) {
+                document.writeln("Ya está en DESTINO");
+            }
+            else if (distancia < 1000) {
+                document.writeln("Medio de transporte: PIE");
+            }
+            else if (distancia < 10000) {
+                document.writeln("Medio de transporte: BICICLETA");
+            }
+            else if (distancia < 30000) {
+                document.writeln("Medio de transporte: COLECTIVO");
+            }
+            else if (distancia < 100000) {
+                document.writeln("Medio de transporte: AUTO");
+            }
+            else {
+                document.writeln("Medio de transporte: AVIÓN");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ejercicio 01</h1>
+    <script>
+        pedirDistancia()
+        document.writeln("<br>");
+        calcularTransporte()
+        document.writeln("<br><hr>");      
+    </script>
+
+</body>
+
+</html>
