@@ -9,8 +9,7 @@
 
         function pedirDistancia(){
             let rta;
-            let esNro;
-            esNro = false;
+            let esNro = false;
             while (!esNro) {
                 rta = prompt('Ingrese un número que sea la distancia a recorrer en METROS', '10');
                 esNro = !((isNaN(rta)) || (rta == null) || ("" == rta.trim()))

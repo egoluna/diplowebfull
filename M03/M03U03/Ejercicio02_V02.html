@@ -1,24 +1,25 @@
-<!-- Ejericio 2: Crear el código que reciba como parámetro un array de números y devuelva el mayor. -->
+<!-- Ejericio 2: Crear el código que reciba como parámetro un array de números y devuelva el mayor. 
+    OTRA VERSIÓN CON VARIABLE GLOBAL en vez de parámetros.
+-->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>M03 U03 E02 Oviedo Luna</title>
+    <title>M3U3 E02 SIN parámetros</title>
     <script type="text/javascript">
-        var numeros = [];
+        let numeros = [];
 
         function cargarNumeros() {
-            let nro, indice, rta, esNro;
-            indice = 0;
-            esNro = true;
+            let rta;
+            let indice = 0;
+            let esNro = true;
             while (esNro) {
                 rta = prompt('Ingrese un número. Sino quiere ingresar presione CANCELAR', '');
                 esNro = !((isNaN(rta)) || (rta == null) || ("" == rta.trim()))
                 //Number(rta) no me funcionó porque no puede ingresar el número 0.
-                if (esNro) {
-                    nro = parseInt(rta);
-                    numeros[indice++] = nro;
+                if (esNro) {                    
+                    numeros[indice++] = parseInt(rta);
                 }
             }            
         }
@@ -52,6 +53,7 @@
 
 <body>
     <h1>Ejercicio 02</h1>
+    <h2>Versión SIN parametros</h2>
     <script>
         cargarNumeros();
         mostrarNumeros();
