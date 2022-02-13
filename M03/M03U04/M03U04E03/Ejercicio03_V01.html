@@ -1,0 +1,112 @@
+<!-- Ejercicio 3: Dado el siguiente array de alumnos utilizar los métodos de array vistos para generar un array con los alumnos aprobados. Se considera aprobado todo alumno que tenga una nota mayor o igual a 7. -->
+<!-- Version 01- -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M3U4 E3 V1</title>
+    <link rel="stylesheet" href="ejercicio03.css">
+    <script type="text/javascript">
+        const alumnos = [{ nombre: 'Juan Gomez', nota: 7 }, { nombre: 'Pedro Rodriguez', nota: 4 }, { nombre: 'Roxana García', nota: 8 },
+        { nombre: 'Luciano Lopez', nota: 5 }, { nombre: 'Fernanda Gimenez', nota: 6 }, { nombre: 'Florencia Martinez', nota: 10 },
+        { nombre: 'Raul Sanchez', nota: 7 }, { nombre: 'Sandra Figueroa', nota: 8 }];
+
+        function mostrarTodos(lista, lugar) {
+            let divListado = document.getElementById(lugar);
+            let tabla, fila, columna, dato;
+
+            tabla = document.createElement("table");
+            tabla.setAttribute("border", 1);
+
+            fila = document.createElement("tr");
+            columna = document.createElement("th");
+            dato = document.createTextNode("NOMBRE");
+            columna.appendChild(dato);
+            fila.appendChild(columna);
+            columna = document.createElement("th");
+            dato = document.createTextNode("NOTA");
+            columna.appendChild(dato);
+            fila.appendChild(columna);
+            tabla.appendChild(fila);
+            for (let i = 0; i < lista.length; i++) {
+                fila = document.createElement("tr");
+                columna = document.createElement("td");
+                dato = document.createTextNode(lista[i].nombre);
+                columna.appendChild(dato);
+                fila.appendChild(columna);
+                columna = document.createElement("td");
+                dato = document.createTextNode(lista[i].nota);
+                columna.appendChild(dato);
+                fila.appendChild(columna);
+                tabla.appendChild(fila);
+            }
+            divListado.appendChild(tabla);
+        }
+        function filtrar(lista) {
+            let aprobados = lista.filter(dato => dato.nota >= 7);
+            return aprobados;
+        }
+        function cambiarbasea100(lista) {
+            let base100 = lista.map(function (dato) { dato.nota = dato.nota * 10; return dato; });
+            return base100;
+        }
+        function buscarAlumno() {
+            let valor_buscar = document.getElementById("valor").value;
+            let tipo_buscar = document.getElementById("tipo").value;
+            let lbRespuesta = document.getElementById("respuesta");
+            let encontrado;
+
+            if (valor_buscar.trim() == "") { lbRespuesta.innerText = `No ingresó ningún valor`; }
+            else {
+                if (tipo_buscar == "nombre") 
+                { encontrado = alumnos.find(function (dato) { return dato.nombre == valor_buscar; });}
+                else { encontrado = alumnos.find(function (dato) { return dato.nota == valor_buscar; }); }
+
+                if (encontrado === undefined) 
+                {lbRespuesta.innerText = `No se encontraron coincidencias con  ${valor_buscar}`;}
+                else { lbRespuesta.innerText = `Respuesta: ${encontrado.nombre}-${encontrado.nota}`; }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Listado de alumnos</h1>
+    <h2>Listado completo de alumnos</h2>
+    <div class="listado" id="listado"></div>
+    <h2>Listado de aprobados</h2>
+    <div class="listado" id="aprobados"></div>
+    <h2>Notas en base 100</h2>
+    <div class="listado" id="lista100"></div>
+    <h2>Buscar:</h2>
+    <form>
+        <label for="valor">Buscar:</label>
+        <input type="text" id="valor">
+
+        <label for="tipo">Seleccione que buscar:</label>
+        <select id="tipo">
+            <option value="nombre" selected>Nombre</option>
+            <option value="nota">Nota</option>
+        </select><br>
+        <label id="respuesta">Respuesta:</label><br>
+        <a id="buscar" href="#">BUSCAR</a>
+        <!-- <span class="botones"><button id="btnBuscar">Buscar</button></span> -->
+    </form>
+    <script type="text/javascript">
+        mostrarTodos(alumnos, "listado");
+        let aprobados = filtrar(alumnos);
+        mostrarTodos(aprobados, "aprobados");
+        let lista100= alumnos.slice();  
+        lista100 = cambiarbasea100(lista100);
+        mostrarTodos(lista100, "lista100");
+
+        //eventos
+        var btn_buscar = document.getElementById("buscar");
+        btn_buscar.addEventListener('click', function () { buscarAlumno() }, false);
+    </script>
+
+
+</body>
+
+</html>

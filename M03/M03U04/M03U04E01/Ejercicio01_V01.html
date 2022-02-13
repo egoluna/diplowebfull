@@ -1,0 +1,39 @@
+<!-- Crear un documento html con 3 cuadrados que, al ser clickeados, cambien el color de fondo del documento. Cada cuadrado debera tener un color distinto. -->
+<!-- Version 01- Evento online: con función parametrizada-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M3U4 E1 V01</title>
+    <link rel="stylesheet" href="ejercicio01.css">    
+    <script type="text/javascript">
+        function cambiarFondo(colorNombre) {
+            let colorFondo = "color: white;";
+            switch (colorNombre) {
+                case "rojo": colorFondo += "background-color: red;"; break;
+                case "azul": colorFondo += "background-color: blue;"; break;
+                case "verde": colorFondo += "background-color: green;"; break;
+                default: colorFondo += "background-color: gray;"; 
+            }
+            document.body.style = colorFondo;
+            }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 01</h1>
+    <p>Seleccione un color</p>
+    <div class="contenedor">
+        <!-- Version 01_01- Evento online sin función, dificil de leer e inviable para más código-->
+        <!-- <div onclick="document.body.style='background-color: red;'" class="cuadrado rojo">FONDO ROJO</div>
+        <div onclick="document.body.style='background-color: blue;'" class="cuadrado azul">FONDO AZUL</div>
+        <div onclick="document.body.style='background-color: green;'" class="cuadrado verde">FONDO VERDE</div>              -->
+
+        <!-- Version 01_02- Evento online con función parametrizada-->
+        <div onclick="cambiarFondo('rojo');" class="cuadrado rojo">FONDO ROJO</div>
+        <div onclick="cambiarFondo('azul')" class="cuadrado azul">FONDO AZUL</div>
+        <div onclick="cambiarFondo('verde')" class="cuadrado verde">FONDO VERDE</div>             
+
+    </div>
+</body>
+
+</html>

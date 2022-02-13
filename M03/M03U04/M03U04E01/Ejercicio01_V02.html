@@ -1,0 +1,48 @@
+<!-- Crear un documento html con 3 cuadrados que, al ser clickeados, cambien el color de fondo del documento. Cada cuadrado debera tener un color distinto. -->
+<!-- Version 02- Evento onclick: con función parametrizada-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M3U4 E1 V02</title>
+    <link rel="stylesheet" href="ejercicio01.css">  
+    <script type="text/javascript">
+        function cambiarFondo(colorNombre) {
+            let colorFondo = "color: white;";
+            switch (colorNombre) {
+                case "rojo": colorFondo += "background-color: red;"; break;
+                case "azul": colorFondo += "background-color: blue;"; break;
+                case "verde": colorFondo += "background-color: green;"; break;
+                default: colorFondo += "background-color: gray;"; 
+            }
+            document.body.style = colorFondo;
+            }
+    </script>  
+</head>
+<body>
+    <h1>Ejercicio 01</h1>
+    <p>Seleccione un color</p>
+    <div class="contenedor">
+        <div class="cuadrado rojo">FONDO ROJO</div>
+        <div class="cuadrado azul">FONDO AZUL</div>
+        <div class="cuadrado verde">FONDO VERDE</div>
+
+        <script type="text/javascript">
+            let cuadro_rojo = document.getElementsByClassName('rojo')[0];
+            let cuadro_azul = document.getElementsByClassName('azul')[0];
+            let cuadro_verde = document.getElementsByClassName('verde')[0];
+
+            //Version 02_01- Evento onclick sin función, no escalable
+            // cuadro_rojo.onclick= function(){document.body.style="background-color: red;"};
+            // cuadro_azul.onclick= function(){document.body.style="background-color: blue;"};
+            // cuadro_verde.onclick= function(){document.body.style="background-color: green;"};            
+
+            //Version 02_02- Evento onclick sin función, no escalable
+            //!!!! IMPORTANTE! no se puede llamar directamente a una función con parámetros porque lo ejecuta al principio
+            cuadro_rojo.onclick= function(){cambiarFondo('rojo')};
+            cuadro_azul.onclick= function(){cambiarFondo('azul')};
+            cuadro_verde.onclick= function(){cambiarFondo('verde')};
+        </script>
+    </div>
+</body>
+</html>

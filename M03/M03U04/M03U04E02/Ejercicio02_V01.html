@@ -1,0 +1,63 @@
+<!-- Ejercicio 2: Programar un contador de caracteres para un textarea. -->
+<!-- Version 01- -->
+<!-- PROBLEMA: agregué un botón reset y NO SE COMO ACTUALIZAR EL CONTADOR CUANDO PRESIONA EL RESET -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M3U4 E2 V1</title>
+    <link rel="stylesheet" href="ejercicio02.css">
+    <script type="text/javascript">
+        function actualizar() {
+            //Tomo los datos del formulario
+            let texto= document.getElementById("mensaje");
+            let divCantidad= document.getElementById("cantidad");
+            let parrafoViejo = divCantidad.getElementsByTagName("p")[0];
+
+            //Nuevo párrafo
+            let parrafoNuevo = document.createElement("p");            
+            let txtCantidad = document.createTextNode("Cantidad de caracteres:" + texto.value.length);
+            parrafoNuevo.appendChild(txtCantidad);            
+            
+            //Versión 01_01: quitando el párrafo y agregando uno nuevo
+            //parrafoViejo.remove();
+            //divCantidad.appendChild(parrafoNuevo);
+
+            //Versión 01_02: reemplazando.             
+            divCantidad.replaceChild(parrafoNuevo, parrafoViejo);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Contador de letras</h1>
+    <form action="#" method="post">
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje"></textarea>
+        </div>
+        <div id="cantidad">
+            <p>Cantidad de caracteres: </p>
+        </div>
+        <!-- <div class="botones">
+            <button type="reset" id="limpiar">Limpiar</button>
+        </div> -->
+    </form>
+
+    <script type="text/javascript">
+        var texto = document.getElementById("mensaje");
+        texto.addEventListener('input', actualizar, false);
+        texto.addEventListener('change', function(){console.log('act.')}, false);
+
+        ///!!! NO SE COMO ACTUALIZAR EL CONTADOR CUANDO PRESIONA EL RESET
+        //texto.addEventListener('change',function(){console.log("reseteo")}, false);
+        //Agregue al formulario el evento reset pero siempre se ejecuta antes.
+        // var formulario = document.getElementsByTagName("form")[0];
+        // formulario.addEventListener('reset', actualizar(), false)
+    </script>
+
+</body>
+
+</html>
