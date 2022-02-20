@@ -1,0 +1,53 @@
+<!-- Ejercicio 2: Programar un contador de caracteres para un textarea. -->
+<!-- Version 02_01- innertext/innerHTML e interpolación de string-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>M3U4 E2 V2</title>
+    <link rel="stylesheet" href="ejercicio02.css">
+    <script type="text/javascript">
+        function actualizar() {
+            let texto = document.getElementById("mensaje");
+            let divCantidad = document.getElementById("cantidad");
+
+            //Version 02_01: innerText
+            // let parrafo = divCantidad.getElementsByTagName("p")[0];
+            // parrafo.innerText=`Cantidad de caracteres:${texto.value.length}`;            
+
+            //Version 02_01: innerHTML
+            divCantidad.innerHTML = `<p>Cantidad de caracteres:${texto.value.length}</p>`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Contador de letras</h1>
+    <form action="#" method="post">
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje"></textarea>
+        </div>
+        <div id="cantidad">
+            <p>Cantidad de caracteres: </p>
+        </div>
+        <div class="botones">
+            <button type="reset" id="limpiar">Limpiar</button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        var texto = document.getElementById("mensaje");
+        texto.addEventListener('input', actualizar, false);
+
+        var form = document.getElementsByTagName('form')[0];
+        form.addEventListener('reset', function() {
+            setTimeout(actualizar, 100)
+        })
+    </script>
+
+</body>
+
+</html>
