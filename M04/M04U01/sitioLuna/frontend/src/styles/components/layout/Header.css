@@ -1,0 +1,14 @@
+header{
+    background-color: #00c2cb;
+    padding-top: 1em;
+}
+header h1{
+    color: white;
+    font-family: 'Handlee', cursive;
+    font-size: 3em;
+    font-weight: 200; 
+     display: inline-block;
+    position: relative;
+    bottom: 30px;    
+    margin:0;
+}

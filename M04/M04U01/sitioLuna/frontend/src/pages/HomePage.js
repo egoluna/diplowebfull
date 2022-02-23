@@ -1,10 +1,11 @@
+import '../styles/components/pages/HomePage.css';
 import React from 'react';
 
 const HomePage =(props)=>{
     return (
     <main className="holder">        
         <div className="homeing">
-            <img src="images/inicio/fondo01.png"  alt="paisajes"/>
+            <img src="images/inicio/fondo01.png" width="100%" alt="paisajes"/>
         </div>
         <div className="columnas">
             <div className="bienvenidos left">

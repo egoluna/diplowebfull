@@ -1,0 +1,16 @@
+.galeria .foto{
+    float: left;
+    width:  19%; 
+    margin: 1em 0 1em 1%;
+    border: 1px solid black;
+    /* padding: 0.1em; */
+    box-sizing: border-box;         
+}
+
+.galeria .foto img{
+    width: 100%;
+    display:block;         
+}
+.galeria .foto:nth-child(5n+1){
+     margin-left: 0; 
+}
