@@ -7,11 +7,12 @@ const Nav =(props)=>{
     <nav>
         <div className="holder">
             <ul>
-                <li><NavLink activeClassName='activo' exact to="/">Home</NavLink></li>
-                <li><NavLink activeClassName='activo' exact to="/nosotros">Nosotros</NavLink></li>
-                <li><NavLink activeClassName='activo' exact to="/novedades">Novedades</NavLink></li>
-                <li><NavLink activeClassName='activo' exact to="/galeria">Galeria</NavLink></li>
-                <li><NavLink activeClassName='activo' exact to="/contacto">Contacto</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/">HOME</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/nosotros">NOSOTROS</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/servicios">SERVICIOS</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/novedades">NOVEDADES</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/galeria">GALERIA</NavLink></li>
+                <li><NavLink activeClassName='activo' exact to="/contacto">CONTACTO</NavLink></li>
             </ul>
         </div>
     </nav>
