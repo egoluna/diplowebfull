@@ -1,0 +1,49 @@
+<h1>{{title}}</h1>
+{{#if conocido}}
+  <p>Bienvenido/a {{nombre}}</p>
+<hr>  
+  {{#if sectorClientes}}
+    <p>Sector ATENCIÓN A CLIENTES</p>  
+    <ul>
+      {{#each serviciosClientes}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    {{#if sectorVentas}}
+    <p>Sector VENTAS AL PÚBLICO</p>  
+    <ul>
+      {{#each serviciosVentas}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+
+    {{else}}
+        <p>Sector SOPORTE TÉCNICO</p>  
+      <ul>
+        {{#each serviciosSoporte}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+
+    {{/if}} 
+  {{/if}}
+  <p><a href="/salir">Salir</a></p>
+{{/if}}
+{{#unless conocido}}
+<p>Ingrese datos y sector</p>
+<form action="/ingresar" method="post">
+  <label>Nombre:</label><input type="text" name="nombre">
+  <br> <br>
+  <label>Sector:</label>
+  <select name="sector">
+    <option value="clientes">Atención al cliente</option>
+    <option value="ventas">Venta de servicios</option>
+    <option value="tecnico">Soporte Técnico</option>
+  </select>
+  <br> <br>
+  <button>Ingresar</button>
+</form>
+{{/unless}}
+<hr>
+<p>Cantidad de vistas: {{vistas}}</p>
