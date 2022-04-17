@@ -7,8 +7,17 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
+/* M05U04---------------------------------------------------------------------------------------------**/
+var adminRouter= require('./routes/admin/novedades');
+/* --------------------------------------------------------------------------------------------------**/
 
 var app = express();
+
+/* M05U03---------------------------------------------------------------------------------------------**/
+require('dotenv').config();
+var session=require('express-session');
+/* ---------------------------------------------------------------------------------------------**/
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,10 +28,38 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+/*M05U04 . session----------------------------------- */
+app.use(session({ 
+	secret:'PW2021awqyeudj',
+	cookie:{maxAge:null},
+	resave:false,
+	saveUninitialized:true
+}))
+//seguridad
+secured=async(req,res,next)=>{
+	try{
+		console.log(req.session.id_usuario);
+		if(req.session.id_usuario){
+			next();
+		}else{
+			res.redirect('/admin/login');
+		}
+	}catch(error){
+		console.log(error);
+	}
+}
+/*---------------------------------------- */
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
+/*M05U04----------------------------------- */
+app.use('/admin/novedades', secured, adminRouter);
+var session=require('express-session');
+/*------------------------------------------- */
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
