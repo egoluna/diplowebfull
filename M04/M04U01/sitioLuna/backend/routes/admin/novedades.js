@@ -3,7 +3,6 @@ var router = express.Router();
 var novedadesModel = require('./../../models/novedadesModel');//M06U01
 
 
-
 /* GET home page. */
 router.get('/', async function (req, res, next) { //M06U01 async
   var novedades = await novedadesModel.getNovedades(); //M06U01
@@ -17,7 +16,7 @@ router.get('/', async function (req, res, next) { //M06U01 async
 /* AGREGAR GET - M06u01  */
 router.get('/agregar', function (req, res, next) {
   res.render('admin/agregar', {
-    layout: 'admin/layout',
+    layout: 'admin/layout'
   });
 });
 
@@ -45,5 +44,72 @@ router.post('/agregar', async (req, res, next) => {
   }
 });
 
+/* Eliminar GET - M06u02  */
+/*router.get('/eliminar/:id', async (req, res, next) => {
+  var id = req.params.id;
+  await novedadesModel.deleteNovedadById(id);
+  res.redirect('/admin/novedades')
+});
+*/
+router.get('/eliminar/:id', async (req, res, next) => {
+  var id = req.params.id;
+  
+  var novedad = await novedadesModel.getNovedadById(id);
+  res.render('admin/eliminar',
+    {
+      layout: 'admin/layout',
+      novedad
+    });
+});
+
+router.post('/eliminar', async (req, res, next) => {  
+      var id = req.body.id;
+      await novedadesModel.deleteNovedadById(id);
+      res.redirect('/admin/novedades');   
+});
+
+
+/* Modificar GET - M06u02  */
+router.get('/modificar/:id', async (req, res, next) => {
+  var id = req.params.id;
+  
+  var novedad = await novedadesModel.getNovedadById(id);
+  res.render('admin/modificar',
+    {
+      layout: 'admin/layout',
+      novedad
+    });
+});
+
+
+/* Modificar POST - M06u02  */
+router.post('/modificar', async (req, res, next) => {
+  try {
+    if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
+      let obj = {
+        titulo: req.body.titulo,
+        subtitulo: req.body.subtitulo,
+        cuerpo: req.body.cuerpo
+      }
+      //console.log(obj);
+      await novedadesModel.modificarNovedadById(obj, req.body.id);
+      res.redirect('/admin/novedades');
+      } else {
+      res.render('admin/modificar', {
+        layout: 'admin/layout',
+        error: true,
+        message: 'Se requiere que todos los campos sean completados'
+      });
+      }    
+  }
+  catch (error) {
+    console.log(error);
+    res.render('admin/modificar', {
+      layout: 'admin/layout',
+      error: true,
+      message: 'No se modificó la novedad'
+    });
+  }
+});
 
 module.exports = router;

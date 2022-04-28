@@ -15,7 +15,10 @@
           <label for="idcuerpo" class="form-label">Cuerpo:</label>
           <textarea class="form-control rounded" id="idcuerpo" rows="3" placeholder="Describa la novedad completa" name="cuerpo"></textarea>
         </div>
+        <div class="text-end">
         <button type="submit" class="btn btn-primary rounded-pill">Guardar</button>
+        <a class="btn btn-primary rounded-pill" href='/admin/novedades'>Cancelar</a>
+        </div>
       </form>      
       {{#if error}}      
         <br>
