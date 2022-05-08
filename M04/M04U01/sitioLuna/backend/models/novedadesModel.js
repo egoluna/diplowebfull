@@ -3,7 +3,7 @@ var pool = require('./bd');
 /**M06U01-------------------------------------------------------------------- */
 /*listar*/
 async function getNovedades(){
-	var query="select id,titulo,subtitulo,cuerpo,year(fecha) as anio,month(fecha)as mes, day(fecha)as dia from novedades order by id DESC";
+	var query="select id,titulo,subtitulo,cuerpo,year(fecha) as anio,month(fecha)as mes, day(fecha)as dia, img_id from novedades order by id DESC";
 	var rows=await pool.query(query);
 	return rows;
 }
@@ -32,7 +32,7 @@ async function deleteNovedadById(id){
 
 /* Traer novedad x id */
 async function getNovedadById(id){
-	var query="select id,titulo,subtitulo,cuerpo,year(fecha) as anio,  month(fecha) as mes, day(fecha)as dia  from novedades where id=?";
+	var query="select id,titulo,subtitulo,cuerpo,year(fecha) as anio,  month(fecha) as mes, day(fecha)as dia,img_id from novedades where id=?";
 	var rows=await pool.query(query,[id]);
 	return rows[0];
 }

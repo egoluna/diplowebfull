@@ -1,25 +1,33 @@
-import '../styles/components/pages/NovedadesPage.css';
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+import NovedadItem from '../components/novedades/NovedadItem';
 
-const NovedadesPage =(props)=>{
-    return (
-        <section className="holder">
-        <div className="novedades">
-            <h3>Titulo</h3>
-            <h4>Subtitulo</h4>
-            <p> Descripción de la novedad- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque deleniti blanditiis ipsa nulla dolorum unde labore debitis cum, a consectetur delectus magni non maiores, fugiat odit officiis facilis adipisci quia!</p>
-        </div>
-        <div className="novedades">
-            <h3>Titulo</h3>
-            <h4>Subtitulo</h4>
-            <p> Descripción de la novedad- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque deleniti blanditiis ipsa nulla dolorum unde labore debitis cum, a consectetur delectus magni non maiores, fugiat odit officiis facilis adipisci quia!</p>
-        </div>
-        <div className="novedades">
-            <h3>Titulo</h3>
-            <h4>Subtitulo</h4>
-            <p> Descripción de la novedad- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque deleniti blanditiis ipsa nulla dolorum unde labore debitis cum, a consectetur delectus magni non maiores, fugiat odit officiis facilis adipisci quia!</p>
-        </div>
-        </section>
-    );
+import '../styles/components/pages/NovedadesPage.css';
+
+const NovedadesPage=(props)=>{
+	const[loading, setLoading]=useState(false);
+	const[novedades, setNovedades]= useState([]);
+	useEffect(()=>{
+		const cargarNovedades=async()=>{
+			setLoading(true);
+			const response=await axios.get('http://localhost:3000/api/novedades');
+			setNovedades(response.data);
+			setLoading(false);
+		};
+		cargarNovedades();
+	},[]);		
+	return(
+		<section className="holder">
+			<h2>Novedades</h2>
+			{loading ?(
+				<p> Cargando..</p>
+			):(
+				novedades.map(item=> <NovedadItem key={item.id}
+				title={item.titulo} subtitle={item.subtitulo} 
+				imagen={item.imagen} body={item.cuerpo} diaN={item.dia} mesN={item.mes} anioN={item.anio} />)
+			)}
+		</section>
+	);
 }
 export default NovedadesPage;
+
